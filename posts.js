@@ -39,9 +39,7 @@
 					}
 				}
 			}
-			if (entries[i].media$thumbnail) {
-				
-			}
+			
 			relatedPosts.push(item);
 		}
 		relatedPosts.sort(function(item1, item2) {
