@@ -72,9 +72,7 @@
 			a.title = relatedPosts[i].count + " common " + (relatedPosts[i].count === 1 ? "category" : "categories");
 			a.onclick = clickHandler;
 			span = document.createElement("span");
-			if (relatedPosts[i].icon) {
-				span.setAttribute("style", "background: url(" + relatedPosts[i].icon.src + ") no-repeat center center;");
-			}
+			
 			a.appendChild(span);
 			a.appendChild(document.createTextNode(relatedPosts[i].title));
 			small = document.createElement("small");
