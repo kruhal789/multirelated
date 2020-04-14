@@ -40,11 +40,7 @@
 				}
 			}
 			if (entries[i].media$thumbnail) {
-				item.icon = {
-					src: entries[i].media$thumbnail.url,
-					width: entries[i].media$thumbnail.width,
-					height: entries[i].media$thumbnail.height
-				};
+				
 			}
 			relatedPosts.push(item);
 		}
