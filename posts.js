@@ -3,8 +3,8 @@
 		return;
 	}
 	var config = {}, postLink, postCategories = [], i, links, script;
-	config.maxPostsToFetch = (typeof bloggerRelatedPosts_config === "object" && bloggerRelatedPosts_config.maxPostsToFetch) || 100;
-	config.maxPostsToDisplay = (typeof bloggerRelatedPosts_config === "object" && bloggerRelatedPosts_config.maxPostsToDisplay) || 6;
+	config.maxPostsToFetch = (typeof loggerRelatedPosts_config === "object" && loggerRelatedPosts_config.maxPostsToFetch) || 100;
+	config.maxPostsToDisplay = (typeof loggerRelatedPosts_config === "object" && loggerRelatedPosts_config.maxPostsToDisplay) || 6;
 	postLink = document.querySelector("link[rel=canonical]").href;
 	if (/\x2F\d{4}\x2F\d{2}\x2F/.test(postLink) === false) {
 		return;
@@ -12,7 +12,7 @@
 	for (i = 0, links = document.querySelectorAll("a[rel=tag]"); i < links.length; i++) {
 		postCategories.push(decodeURIComponent(links[i].href.split("/").pop()));
 	}
-	bloggerRelatedPosts_callback = function(data) {
+	loggerRelatedPosts_callback = function(data) {
 		var relatedPosts = [], i, j, k, entries, item, links, categories, clickHandler, div, ul, li, a, span, small;
 		for (i = 0, entries = data.feed.entry; i < entries.length; i++) {
 			item = {
@@ -83,6 +83,6 @@
 		document.querySelector(".post").appendChild(div);
 	};
 	script = document.createElement("script");
-	script.src = "/feeds/posts/summary?alt=json&callback=bloggerRelatedPosts_callback&max-results=" + config.maxPostsToFetch + "&q=" + encodeURIComponent('label:"' + postCategories.join('" | label:"') + '"');
+	script.src = "/feeds/posts/summary?alt=json&callback=loggerRelatedPosts_callback&max-results=" + config.maxPostsToFetch + "&q=" + encodeURIComponent('label:"' + postCategories.join('" | label:"') + '"');
 	document.querySelector("head").appendChild(script);
 })();
