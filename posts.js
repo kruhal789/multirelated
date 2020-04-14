@@ -71,9 +71,7 @@
 			a.href = relatedPosts[i].link;
 			a.title = relatedPosts[i].count + " common " + (relatedPosts[i].count === 1 ? "category" : "categories");
 			a.onclick = clickHandler;
-			span = document.createElement("span");
 			
-			a.appendChild(span);
 			a.appendChild(document.createTextNode(relatedPosts[i].title));
 			small = document.createElement("small");
 			small.appendChild(document.createTextNode(relatedPosts[i].categories.join(", ")));
