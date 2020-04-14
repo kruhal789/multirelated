@@ -62,7 +62,7 @@
 			}
 		};
 		div = document.createElement("div");
-		div.id = "blogger-related-posts";
+		div.id = "logger-related-posts";
 		div.innerHTML = "<h4>Related Posts</h4>";
 		ul = document.createElement("ul");
 		for (i = 0; i < relatedPosts.length; i++) {
